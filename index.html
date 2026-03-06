@@ -104,15 +104,14 @@
         }
 
         .nav-brand {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: 1.5rem;
-            color: var(--text);
             text-decoration: none;
-            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
         }
 
-        .nav-brand span {
-            color: var(--accent);
+        .nav-brand img {
+            height: 52px;
+            width: auto;
         }
 
         .nav-links {
@@ -822,7 +821,7 @@
     <!-- ─── Navigation ─── -->
     <nav>
         <div class="container nav-inner">
-            <a href="#" class="nav-brand">Tiink<span>Tech</span></a>
+            <a href="#" class="nav-brand"><img src="assets/logo.png" alt="TiinkTech" /></a>
             <button class="nav-toggle" aria-label="Toggle menu">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="3" y1="6" x2="21" y2="6"/>
