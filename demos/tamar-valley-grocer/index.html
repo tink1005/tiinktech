@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamar Valley Grocer — West Launceston</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest:  #1e3d2f;
+    --forest2: #2d5a3d;
+    --sage:    #7a9e7e;
+    --sage-lt: #b8cfba;
+    --cream:   #faf6f0;
+    --warm:    #f2ebe0;
+    --text:    #1a2419;
+    --muted:   #5c6e5e;
+    --white:   #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); line-height: 1.6; }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    border-bottom: 1px solid rgba(30,61,47,0.12);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .nav-logo img { height: 48px; width: 48px; object-fit: contain; }
+  .nav-logo span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--forest);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--forest); }
+  .btn-order {
+    background: var(--forest);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.55rem 1.4rem;
+    border-radius: 100px;
+    transition: background 0.2s;
+  }
+  .btn-order:hover { background: var(--forest2); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(10,25,16,0.72) 35%, rgba(10,25,16,0.25) 100%);
+  }
+  .hero-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    width: 100%;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--sage-lt);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+    font-weight: 700;
+    line-height: 1.08;
+    margin-bottom: 1.25rem;
+    max-width: 620px;
+  }
+  .hero h1 em { font-style: italic; color: var(--sage-lt); }
+  .hero p {
+    color: rgba(255,255,255,0.82);
+    font-size: 1.1rem;
+    max-width: 460px;
+    margin-bottom: 2.2rem;
+    line-height: 1.7;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary-lg {
+    background: var(--white);
+    color: var(--forest);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    display: inline-block;
+  }
+  .btn-primary-lg:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+  .btn-ghost-lg {
+    background: transparent;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    border: 1.5px solid rgba(255,255,255,0.45);
+    border-radius: 100px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost-lg:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+  /* ── PILLARS BAR ── */
+  .pillars {
+    background: var(--forest);
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+  }
+  .pillar {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.83rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .pillar-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
+
+  /* ── SECTIONS ── */
+  .section { max-width: 1200px; margin: 0 auto; padding: 5.5rem 2.5rem; }
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.7rem;
+  }
+  .section-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    color: var(--forest);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .section-h2 em { font-style: italic; }
+  .section-sub {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin-bottom: 3.5rem;
+    line-height: 1.75;
+  }
+
+  /* ── ABOUT SPLIT ── */
+  .about-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    padding: 5.5rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .about-img-wrap { position: relative; }
+  .about-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+  .about-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--forest);
+    color: var(--white);
+    padding: 1.25rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  }
+  .about-badge-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--sage-lt); line-height: 1; }
+  .about-badge-label { font-size: 0.78rem; color: rgba(255,255,255,0.7); margin-top: 0.2rem; }
+  .about-text .eyebrow { margin-bottom: 0.7rem; }
+  .about-text p { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; }
+  .about-points { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+  .about-points li {
+    display: flex; align-items: center; gap: 0.7rem;
+    color: var(--text); font-size: 0.95rem; font-weight: 500;
+  }
+  .about-points li::before {
+    content: '';
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--sage-lt);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e3d2f' stroke-width='2.5'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .btn-green {
+    background: var(--forest);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-green:hover { background: var(--forest2); transform: translateY(-1px); }
+
+  /* ── MENU HIGHLIGHTS ── */
+  .menu-bg { background: var(--warm); }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .menu-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .menu-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+  .menu-card img { width: 100%; height: 210px; object-fit: cover; display: block; }
+  .menu-card-body { padding: 1.25rem 1.4rem 1.5rem; }
+  .menu-card-tag {
+    display: inline-block;
+    background: var(--sage-lt);
+    color: var(--forest);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.65rem;
+    border-radius: 100px;
+    margin-bottom: 0.6rem;
+  }
+  .menu-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--forest); margin-bottom: 0.35rem; }
+  .menu-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.9rem; }
+  .menu-card-price { font-weight: 700; color: var(--forest); font-size: 1rem; }
+  .menu-cta { text-align: center; margin-top: 3rem; }
+
+  /* ── VISIT SECTION ── */
+  .visit-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 420px;
+  }
+  .visit-img { width: 100%; height: 100%; object-fit: cover; min-height: 380px; display: block; }
+  .visit-content {
+    background: var(--forest);
+    padding: 4rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .visit-content .eyebrow { color: var(--sage); }
+  .visit-content .section-h2 { color: var(--white); margin-bottom: 2rem; }
+  .visit-detail {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+  .visit-icon {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+  .visit-detail-text strong { display: block; color: var(--white); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.15rem; }
+  .visit-detail-text span { color: rgba(255,255,255,0.6); font-size: 0.875rem; line-height: 1.5; }
+
+  /* ── ORDER CTA ── */
+  .order-cta {
+    background: var(--sage-lt);
+    padding: 5rem 2.5rem;
+    text-align: center;
+  }
+  .order-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: var(--forest);
+    margin-bottom: 0.75rem;
+  }
+  .order-cta p { color: var(--muted); font-size: 1.05rem; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--forest);
+    padding: 3.5rem 2.5rem 2rem;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 2rem;
+  }
+  .footer-brand img { height: 56px; margin-bottom: 1rem; display: block; }
+  .footer-brand p { color: rgba(255,255,255,0.55); font-size: 0.9rem; max-width: 280px; line-height: 1.7; }
+  .footer-col h4 { color: rgba(255,255,255,0.4); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+  .footer-col a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; margin-bottom: 0.6rem; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom p { color: rgba(255,255,255,0.3); font-size: 0.8rem; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .about-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-badge { right: 0; bottom: -16px; }
+    .menu-grid { grid-template-columns: repeat(2, 1fr); }
+    .visit-wrap { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .menu-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .pillars { gap: 1.5rem; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="https://05b3025f89f1a74300a0.cdn6.editmysite.com/uploads/b/05b3025f89f1a74300a027acbf451ce5b3e24b4e2627fa95129afd2818c51e94/TamarValleyGrocer-A1_1727574664.png?width=200&optimize=medium" alt="Tamar Valley Grocer">
+    <span>Tamar Valley Grocer</span>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#visit">Visit Us</a>
+    <a href="#menu" class="btn-order">Order Online</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="hero.jpg" alt="Tamar Valley Grocer Canteen">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">&#9679; West Launceston's Neighbourhood Grocer</div>
+    <h1>Fresh produce,<br><em>good food,</em><br>great coffee.</h1>
+    <p>A gourmet grocer and canteen in the heart of West Launceston. Locally sourced produce, barista coffee, and a menu made with care.</p>
+    <div class="hero-actions">
+      <a href="#menu" class="btn-primary-lg">Order Online</a>
+      <a href="#menu" class="btn-ghost-lg">See the Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<div class="pillars">
+  <div class="pillar"><div class="pillar-dot"></div> Locally Sourced Produce</div>
+  <div class="pillar"><div class="pillar-dot"></div> Barista Coffee</div>
+  <div class="pillar"><div class="pillar-dot"></div> Gourmet Groceries</div>
+  <div class="pillar"><div class="pillar-dot"></div> Order Online &amp; Pick Up</div>
+  <div class="pillar"><div class="pillar-dot"></div> 5 Brougham St, West Launceston</div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="about-wrap">
+  <div class="about-img-wrap">
+    <img class="about-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=85&auto=format&fit=crop" alt="Tamar Valley Grocer interior">
+    <div class="about-badge">
+      <div class="about-badge-num">Local</div>
+      <div class="about-badge-label">West Launceston</div>
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="eyebrow">Our Story</div>
+    <h2 class="section-h2">Your neighbourhood<br><em>grocer &amp; canteen</em></h2>
+    <p>Tamar Valley Grocer is more than a supermarket. We're a local institution — a place to grab your weekly groceries, a fresh barista coffee, or a bite to eat made from ingredients you can trust.</p>
+    <p>From our deli counter to our canteen, everything we do is guided by a love of good food and a commitment to the Launceston community.</p>
+    <ul class="about-points">
+      <li>Gourmet groceries and local produce</li>
+      <li>Freshly made canteen food every day</li>
+      <li>Barista coffee and sweet treats</li>
+      <li>Afterpay available</li>
+    </ul>
+    <a href="#menu" class="btn-green">Browse the Menu</a>
+  </div>
+</div>
+
+<!-- MENU HIGHLIGHTS -->
+<div id="menu" class="menu-bg">
+  <div class="section">
+    <div class="eyebrow">Canteen Menu</div>
+    <h2 class="section-h2">Made fresh, <em>every day</em></h2>
+    <p class="section-sub">From quick snacks to a proper feed — our canteen is open for dine-in and online orders.</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img src="https://150975586.cdn6.editmysite.com/uploads/1/5/0/9/150975586/2NF376FW7IQVTCMR6XMBSMOU.jpeg?width=800&optimize=medium" alt="Small Chips">
+        <div class="menu-card-body">
+          <span class="menu-card-tag">Canteen</span>
+          <h3>Small Chips</h3>
+          <p>Golden, crispy chips — the perfect snack any time of day.</p>
+          <div class="menu-card-price">A$3.50</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="https://150975586.cdn6.editmysite.com/uploads/1/5/0/9/150975586/F4L4K7AJTI2QZ6JXJOJY5G47.jpeg?width=800&optimize=medium" alt="Panko Crumbed Flathead">
+        <div class="menu-card-body">
+          <span class="menu-card-tag">Canteen</span>
+          <h3>Panko Crumbed Flathead</h3>
+          <p>Tasmanian flathead, panko crumbed and cooked to order.</p>
+          <div class="menu-card-price">A$4.50</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=85&auto=format&fit=crop" alt="Barista Coffee">
+        <div class="menu-card-body">
+          <span class="menu-card-tag">Coffee</span>
+          <h3>Barista Coffee</h3>
+          <p>Expertly brewed coffee to fuel your morning or afternoon.</p>
+          <div class="menu-card-price">From the canteen</div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-cta">
+      <a href="#menu" class="btn-green">View Full Menu &amp; Order Online</a>
+    </div>
+  </div>
+</div>
+
+<!-- VISIT -->
+<div id="visit" class="visit-wrap">
+  <img class="visit-img" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1200&q=85&auto=format&fit=crop" alt="Fresh produce display">
+  <div class="visit-content">
+    <div class="eyebrow">Find Us</div>
+    <h2 class="section-h2" style="color:white">Come visit<br><em>the store</em></h2>
+    <div class="visit-detail">
+      <div class="visit-icon">&#128205;</div>
+      <div class="visit-detail-text">
+        <strong>Address</strong>
+        <span>5 Brougham Street<br>West Launceston, TAS 7250</span>
+      </div>
+    </div>
+    <div class="visit-detail">
+      <div class="visit-icon">&#128247;</div>
+      <div class="visit-detail-text">
+        <strong>Instagram</strong>
+        <span><a href="https://www.instagram.com/tamarvalleygrocer/" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;">@tamarvalleygrocer</a></span>
+      </div>
+    </div>
+    <div class="visit-detail">
+      <div class="visit-icon">&#128241;</div>
+      <div class="visit-detail-text">
+        <strong>Order Online</strong>
+        <span>Available via our online menu — pick up in store</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER CTA -->
+<div class="order-cta">
+  <h2>Hungry? Order online now.</h2>
+  <p>Skip the queue — order ahead and pick up fresh from our canteen at 5 Brougham Street.</p>
+  <a href="#menu" class="btn-green">Order Online</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="https://05b3025f89f1a74300a0.cdn6.editmysite.com/uploads/b/05b3025f89f1a74300a027acbf451ce5b3e24b4e2627fa95129afd2818c51e94/TamarValleyGrocer-A1_1727574664.png?width=200&optimize=medium" alt="Tamar Valley Grocer">
+      <p>West Launceston's gourmet grocer and canteen. Fresh food, barista coffee, and local produce — every day.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <a href="#">5 Brougham Street, West Launceston</a>
+      <a href="https://www.instagram.com/tamarvalleygrocer/" target="_blank">@tamarvalleygrocer</a>
+    </div>
+    <div class="footer-col">
+      <h4>Order</h4>
+      <a href="#menu">Order Online</a>
+      <a href="#menu">View Menu</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Tamar Valley Grocer</p>
+    <p>West Launceston, Tasmania</p>
+  </div>
+</footer>
+
+</body>
+</html>
