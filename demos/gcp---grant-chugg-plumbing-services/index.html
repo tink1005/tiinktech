@@ -1,532 +1,803 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GCP - Grant Chugg Plumbing Services | Launceston, Tasmania</title>
-<meta name="description" content="24/7 Emergency Plumbing in Launceston, Tasmania. Licensed plumbers for residential and commercial plumbing, gas fitting, bathroom renovations and more. Call (03) 6326 8780.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
---charcoal:#1a1a1a;
---dark:#222;
---red:#DC2626;
---red-dark:#B91C1C;
---white:#fff;
---gray-100:#f5f5f5;
---gray-200:#e5e5e5;
---gray-400:#9ca3af;
---gray-600:#4b5563;
---display:'Barlow Condensed',sans-serif;
---body:'Inter',sans-serif;
-}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);color:var(--charcoal);line-height:1.6;background:var(--white)}
-img{max-width:100%;height:auto;display:block}
-a{text-decoration:none;color:inherit}
-ul{list-style:none}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCP - Grant Chugg Plumbing Services | Launceston Plumber</title>
+    <meta name="description" content="Grant Chugg Plumbing Services — 24/7 emergency plumbing, maintenance, gas fitting, bathroom renovations and commercial plumbing in Launceston, Tasmania.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* HEADER */
-.site-header{
-position:fixed;top:0;left:0;right:0;z-index:1000;
-background:var(--charcoal);
-transition:background .3s;
-}
-.header-inner{
-max-width:1280px;margin:0 auto;
-display:flex;align-items:center;justify-content:space-between;
-padding:0 24px;height:72px;
-}
-.logo img{height:44px;width:auto}
-.main-nav{display:flex;align-items:center;gap:32px}
-.main-nav a{
-font-family:var(--display);font-weight:700;font-size:.95rem;
-color:var(--white);letter-spacing:.5px;text-transform:uppercase;
-padding:4px 0;border-bottom:2px solid transparent;
-transition:border-color .2s;
-}
-.main-nav a:hover,.main-nav a:focus{border-color:var(--red)}
-.header-cta{
-display:flex;align-items:center;gap:12px;
-background:var(--red);color:var(--white);
-padding:10px 20px;border-radius:4px;
-font-family:var(--display);font-weight:700;font-size:1rem;
-letter-spacing:.5px;transition:background .2s;
-}
-.header-cta:hover{background:var(--red-dark)}
-.header-cta img{height:36px;width:36px;flex-shrink:0}
-.header-cta-text{line-height:1.2}
-.header-cta-label{font-size:.7rem;font-family:var(--body);font-weight:500;opacity:.9}
-.burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
-.burger span{display:block;width:28px;height:3px;background:var(--white);margin:5px 0;border-radius:2px;transition:all .3s}
-.mobile-nav{
-display:none;position:fixed;top:72px;left:0;right:0;bottom:0;
-background:var(--charcoal);padding:32px 24px;z-index:999;
-overflow-y:auto;
-}
-.mobile-nav.open{display:block}
-.mobile-nav a{
-display:block;font-family:var(--display);font-weight:700;
-font-size:1.2rem;color:var(--white);padding:12px 0;
-border-bottom:1px solid rgba(255,255,255,.1);
-letter-spacing:.5px;text-transform:uppercase;
-}
-.mobile-nav a:hover{color:var(--red)}
+        :root {
+            --charcoal: #1a1a1a;
+            --dark: #222;
+            --accent: #2563EB;
+            --accent-hover: #1d4ed8;
+            --white: #ffffff;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-400: #9ca3af;
+            --gray-600: #4b5563;
+            --heading: 'Barlow Condensed', sans-serif;
+            --body: 'Inter', sans-serif;
+        }
 
-/* HERO */
-.hero{
-position:relative;
-background:var(--charcoal);
-padding:140px 24px 80px;
-overflow:hidden;
-min-height:520px;
-display:flex;align-items:center;
-}
-.hero::before{
-content:'';position:absolute;inset:0;
-background:linear-gradient(135deg,var(--charcoal) 40%,rgba(26,26,26,.7));
-z-index:1;
-}
-.hero-inner{
-position:relative;z-index:2;
-max-width:1280px;margin:0 auto;width:100%;
-display:flex;align-items:center;justify-content:space-between;gap:40px;
-}
-.hero-content{max-width:640px}
-.hero-badge{
-display:inline-flex;align-items:center;gap:8px;
-background:var(--red);color:var(--white);
-padding:6px 16px;border-radius:2px;
-font-family:var(--display);font-weight:700;font-size:.85rem;
-letter-spacing:1px;text-transform:uppercase;
-margin-bottom:20px;
-}
-.hero-badge img{height:28px;width:28px}
-.hero h1{
-font-family:var(--display);font-weight:900;
-font-size:clamp(2.8rem,6vw,4.5rem);
-color:var(--white);line-height:1;
-text-transform:uppercase;letter-spacing:1px;
-margin-bottom:16px;
-}
-.hero h1 span{color:var(--red)}
-.hero p{
-color:var(--gray-400);font-size:1.1rem;
-max-width:520px;margin-bottom:32px;line-height:1.7;
-}
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
-.btn{
-display:inline-flex;align-items:center;gap:8px;
-padding:14px 32px;border-radius:4px;
-font-family:var(--display);font-weight:700;font-size:1.05rem;
-letter-spacing:.5px;text-transform:uppercase;
-transition:all .2s;border:2px solid transparent;cursor:pointer;
-}
-.btn-red{background:var(--red);color:var(--white);border-color:var(--red)}
-.btn-red:hover{background:var(--red-dark);border-color:var(--red-dark)}
-.btn-outline{background:transparent;color:var(--white);border-color:var(--white)}
-.btn-outline:hover{background:var(--white);color:var(--charcoal)}
-.hero-logo{flex-shrink:0}
-.hero-logo img{height:80px;width:auto;opacity:.15}
+        html { scroll-behavior: smooth; }
 
-/* STATS BAR */
-.stats-bar{background:var(--red);padding:0 24px}
-.stats-inner{
-max-width:1280px;margin:0 auto;
-display:grid;grid-template-columns:repeat(4,1fr);
-}
-.stat{
-padding:28px 16px;text-align:center;color:var(--white);
-border-right:1px solid rgba(255,255,255,.2);
-}
-.stat:last-child{border-right:none}
-.stat-number{
-font-family:var(--display);font-weight:900;font-size:2.4rem;
-line-height:1;margin-bottom:4px;
-}
-.stat-label{font-size:.8rem;font-weight:500;opacity:.9;text-transform:uppercase;letter-spacing:.5px}
+        body {
+            font-family: var(--body);
+            color: var(--charcoal);
+            line-height: 1.6;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
 
-/* SERVICES */
-.services{padding:80px 24px;background:var(--white)}
-.services-inner{max-width:1280px;margin:0 auto}
-.section-header{text-align:center;margin-bottom:56px}
-.section-tag{
-font-family:var(--display);font-weight:700;font-size:.85rem;
-color:var(--red);text-transform:uppercase;letter-spacing:2px;
-margin-bottom:8px;
-}
-.section-title{
-font-family:var(--display);font-weight:900;
-font-size:clamp(2rem,4vw,3rem);
-text-transform:uppercase;line-height:1.1;color:var(--charcoal);
-}
-.services-grid{
-display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
-}
-.service-card{
-background:var(--gray-100);border-radius:4px;
-padding:40px 28px;text-align:center;
-border-top:4px solid transparent;
-transition:border-color .2s,transform .2s;
-}
-.service-card:hover{border-top-color:var(--red);transform:translateY(-4px)}
-.service-icon{
-width:64px;height:64px;margin:0 auto 20px;
-display:flex;align-items:center;justify-content:center;
-}
-.service-icon img{max-height:56px;max-width:56px}
-.service-card h3{
-font-family:var(--display);font-weight:900;font-size:1.3rem;
-text-transform:uppercase;margin-bottom:12px;color:var(--charcoal);
-}
-.service-card p{font-size:.92rem;color:var(--gray-600);line-height:1.6}
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
 
-/* NO JOB TOO BIG */
-.cta-banner{
-background:var(--charcoal);
-padding:64px 24px;text-align:center;
-}
-.cta-banner h2{
-font-family:var(--display);font-weight:900;
-font-size:clamp(1.8rem,4vw,2.8rem);
-color:var(--white);text-transform:uppercase;
-letter-spacing:1px;margin-bottom:24px;
-}
-.cta-banner p{
-color:var(--gray-400);font-size:1rem;
-max-width:600px;margin:0 auto 32px;line-height:1.7;
-}
-.cta-banner .btn-red{font-size:1.1rem;padding:16px 40px}
+        /* ─── HEADER ─── */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--charcoal);
+            transition: background 0.3s;
+        }
 
-/* WHY CHOOSE US */
-.why-us{padding:80px 24px;background:var(--gray-100)}
-.why-us-inner{max-width:1280px;margin:0 auto}
-.why-grid{
-display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
-margin-top:56px;
-}
-.why-card{text-align:center;padding:32px 20px}
-.why-card-label{
-font-family:var(--display);font-weight:900;font-size:1.5rem;
-text-transform:uppercase;color:var(--charcoal);margin-bottom:4px;
-}
-.why-card-sub{
-font-family:var(--display);font-weight:700;font-size:.85rem;
-text-transform:uppercase;letter-spacing:1px;color:var(--red);
-}
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            height: 72px;
+        }
 
-/* DRAINS SECTION */
-.drains{padding:80px 24px;background:var(--white)}
-.drains-inner{max-width:900px;margin:0 auto;text-align:center}
-.drains h2{
-font-family:var(--display);font-weight:900;
-font-size:clamp(1.8rem,4vw,2.6rem);
-text-transform:uppercase;margin-bottom:32px;color:var(--charcoal);
-}
-.drains-list{
-display:flex;flex-direction:column;gap:16px;
-text-align:left;max-width:680px;margin:0 auto 32px;
-}
-.drains-list li{
-font-size:1rem;color:var(--gray-600);line-height:1.7;
-padding-left:24px;position:relative;
-}
-.drains-list li::before{
-content:'';position:absolute;left:0;top:10px;
-width:10px;height:10px;background:var(--red);border-radius:2px;
-}
+        .logo img { height: 44px; width: auto; }
 
-/* TESTIMONIALS */
-.testimonials{padding:80px 24px;background:var(--charcoal)}
-.testimonials-inner{max-width:1280px;margin:0 auto}
-.testimonials .section-tag{color:var(--red)}
-.testimonials .section-title{color:var(--white)}
+        .nav-desktop { display: flex; align-items: center; gap: 32px; }
+        .nav-desktop a {
+            font-family: var(--heading);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--white);
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .nav-desktop a:hover,
+        .nav-desktop a[aria-current="page"] { border-color: var(--accent); }
 
-/* CONTACT / FOOTER */
-.site-footer{background:var(--dark);padding:48px 24px 24px;color:var(--gray-400)}
-.footer-inner{
-max-width:1280px;margin:0 auto;
-display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;
-}
-.footer-brand img{height:44px;margin-bottom:16px}
-.footer-brand p{font-size:.9rem;line-height:1.6}
-.footer-col h4{
-font-family:var(--display);font-weight:700;font-size:1rem;
-color:var(--white);text-transform:uppercase;letter-spacing:1px;
-margin-bottom:16px;
-}
-.footer-col a{
-display:block;font-size:.9rem;color:var(--gray-400);
-padding:4px 0;transition:color .2s;
-}
-.footer-col a:hover{color:var(--white)}
-.footer-contact a{
-display:flex;align-items:center;gap:8px;
-font-size:1rem;color:var(--white);font-weight:600;
-padding:6px 0;transition:color .2s;
-}
-.footer-contact a:hover{color:var(--red)}
-.footer-contact .address{font-size:.9rem;color:var(--gray-400);margin-top:8px;line-height:1.6}
-.footer-bottom{
-max-width:1280px;margin:32px auto 0;
-padding-top:24px;border-top:1px solid rgba(255,255,255,.1);
-font-size:.8rem;text-align:center;color:var(--gray-600);
-}
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: var(--heading);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: background 0.2s;
+        }
+        .header-cta:hover { background: var(--accent-hover); }
+        .header-cta img { height: 28px; width: 28px; border-radius: 50%; }
 
-/* RESPONSIVE */
-@media(max-width:1024px){
-.services-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
-.stats-inner{grid-template-columns:repeat(2,1fr)}
-.stat:nth-child(2){border-right:none}
-.footer-inner{grid-template-columns:1fr 1fr}
-}
-@media(max-width:768px){
-.main-nav{display:none}
-.burger{display:block}
-.header-cta-text{display:none}
-.header-cta{padding:8px 12px}
-.hero{padding:120px 24px 60px;min-height:auto}
-.hero-inner{flex-direction:column;text-align:center}
-.hero p{margin-left:auto;margin-right:auto}
-.hero-actions{justify-content:center}
-.hero-logo{display:none}
-.hero-badge{margin-bottom:16px}
-.services-grid{grid-template-columns:1fr}
-.why-grid{grid-template-columns:repeat(2,1fr)}
-.stats-inner{grid-template-columns:repeat(2,1fr)}
-.footer-inner{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-.why-grid{grid-template-columns:1fr 1fr}
-.stats-inner{grid-template-columns:1fr}
-.stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.2)}
-.stat:last-child{border-bottom:none}
-.hero-actions{flex-direction:column;align-items:stretch}
-}
-</style>
+        /* Mobile nav toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: var(--white);
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--charcoal);
+            padding: 32px 24px;
+            z-index: 999;
+            overflow-y: auto;
+        }
+        .mobile-nav.open { display: block; }
+        .mobile-nav a {
+            display: block;
+            font-family: var(--heading);
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--white);
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav a:hover { color: var(--accent); }
+        .mobile-nav-cta {
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 16px;
+            border-radius: 4px;
+            font-family: var(--heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            position: relative;
+            background: var(--charcoal);
+            padding: 160px 24px 100px;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-content {}
+        .hero-badge {
+            display: inline-block;
+            font-family: var(--heading);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-family: var(--heading);
+            font-weight: 900;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            line-height: 1.05;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--gray-400);
+            max-width: 480px;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--white);
+            font-family: var(--heading);
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 16px 32px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            font-family: var(--heading);
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 16px 32px;
+            border-radius: 4px;
+            border: 2px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .btn-secondary:hover { border-color: var(--white); }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-image img {
+            max-height: 440px;
+            width: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+        }
+
+        /* ─── STATS BAR ─── */
+        .stats-bar {
+            background: var(--accent);
+            padding: 0 24px;
+        }
+        .stats-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+        }
+        .stat-item {
+            padding: 28px 16px;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+        .stat-item:last-child { border-right: none; }
+        .stat-number {
+            font-family: var(--heading);
+            font-weight: 900;
+            font-size: 2.4rem;
+            color: var(--white);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.85);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 6px;
+        }
+
+        /* ─── SERVICES ─── */
+        .services {
+            padding: 96px 24px;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+        .section-label {
+            display: inline-block;
+            font-family: var(--heading);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: var(--heading);
+            font-weight: 900;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            text-transform: uppercase;
+            color: var(--charcoal);
+            line-height: 1.1;
+        }
+
+        .services-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--gray-100);
+            padding: 40px 32px;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        }
+        .service-card h3 {
+            font-family: var(--heading);
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ─── NO JOB TOO BIG ─── */
+        .cta-band {
+            background: var(--charcoal);
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .cta-band-inner { max-width: 800px; margin: 0 auto; }
+        .cta-band h2 {
+            font-family: var(--heading);
+            font-weight: 900;
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+        .cta-band p {
+            font-size: 1.1rem;
+            color: var(--gray-400);
+            margin-bottom: 32px;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* ─── BLOCKED DRAINS ─── */
+        .drains {
+            padding: 96px 24px;
+            background: var(--white);
+        }
+        .drains-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .drains-image img {
+            border-radius: 8px;
+            width: 100%;
+        }
+        .drains-content h2 {
+            font-family: var(--heading);
+            font-weight: 900;
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            text-transform: uppercase;
+            color: var(--charcoal);
+            margin-bottom: 24px;
+        }
+        .drains-content p {
+            color: var(--gray-600);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .drains-content .btn-primary { margin-top: 16px; }
+
+        /* ─── TESTIMONIALS ─── */
+        .testimonials {
+            padding: 96px 24px;
+            background: var(--gray-100);
+        }
+        .testimonials-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 64px;
+        }
+        .testimonial-card {
+            background: var(--white);
+            padding: 36px 28px;
+            border-radius: 6px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        .testimonial-stars {
+            color: #F59E0B;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        .testimonial-word {
+            font-family: var(--heading);
+            font-weight: 900;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            margin-bottom: 4px;
+        }
+        .testimonial-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gray-400);
+        }
+
+        /* ─── CONTACT / FOOTER ─── */
+        .site-footer {
+            background: var(--charcoal);
+            padding: 72px 24px 0;
+        }
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr 1fr;
+            gap: 48px;
+        }
+        .footer-brand p {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-top: 20px;
+        }
+        .footer-brand img { height: 48px; width: auto; }
+        .footer-col h4 {
+            font-family: var(--heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--white);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+        .footer-col a,
+        .footer-col p {
+            display: block;
+            color: var(--gray-400);
+            font-size: 0.9rem;
+            padding: 5px 0;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--white); }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .footer-contact-item svg { flex-shrink: 0; margin-top: 3px; }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+        }
+        .footer-bottom p {
+            color: var(--gray-600);
+            font-size: 0.8rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .footer-socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: var(--gray-400);
+            transition: background 0.2s, color 0.2s;
+        }
+        .footer-socials a:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 968px) {
+            .nav-desktop { display: none; }
+            .header-cta-wrap { display: none; }
+            .nav-toggle { display: block; }
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero p { margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+            .hero-image { display: none; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .stat-item:nth-child(2) { border-right: none; }
+            .drains-inner { grid-template-columns: 1fr; }
+            .drains-image { order: -1; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .hero { padding: 140px 20px 64px; }
+            .stats-inner { grid-template-columns: 1fr 1fr; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+            .services { padding: 64px 20px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .cta-band { padding: 56px 20px; }
+            .drains { padding: 64px 20px; }
+            .testimonials { padding: 64px 20px; }
+            .footer-inner { grid-template-columns: 1fr; }
+            .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
+            .stat-item:last-child { border-bottom: none; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ═══ HEADER ═══ -->
 <header class="site-header">
-<div class="header-inner">
-<a href="https://gcptas.com.au" class="logo">
-<img src="https://gcptas.com.au/wp-content/uploads/2022/07/logo-white.png" alt="Grant Chugg Plumbing" width="204" height="56">
-</a>
-<nav class="main-nav" aria-label="Main navigation">
-<a href="https://gcptas.com.au/">Home</a>
-<a href="https://gcptas.com.au/about-us/">About Us</a>
-<a href="https://gcptas.com.au/services/">Services</a>
-<a href="https://gcptas.com.au/contact-us/">Contact Us</a>
-</nav>
-<a href="tel:0363268780" class="header-cta">
-<img src="https://gcptas.com.au/wp-content/uploads/2022/07/24hours-150x150.png" alt="24 hour emergency plumbing" width="150" height="150">
-<span class="header-cta-text">
-<span class="header-cta-label">Emergency Plumbing</span><br>
-Call: 6326 8780
-</span>
-</a>
-<button class="burger" aria-label="Menu Toggle" aria-expanded="false" onclick="document.querySelector('.mobile-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='false')">
-<span></span><span></span><span></span>
-</button>
-</div>
-<nav class="mobile-nav" aria-label="Mobile navigation">
-<a href="https://gcptas.com.au/">Home</a>
-<a href="https://gcptas.com.au/about-us/">About Us</a>
-<a href="https://gcptas.com.au/about-us/">Grant Chugg Plumbing</a>
-<a href="https://gcptas.com.au/about-us/team/">Our Team</a>
-<a href="https://gcptas.com.au/positions-vacant/">Positions Vacant</a>
-<a href="https://gcptas.com.au/giving-back/">Giving Back</a>
-<a href="https://gcptas.com.au/about-us/community-page/">Community Page</a>
-<a href="https://gcptas.com.au/about-us/partners/">Partners</a>
-<a href="https://gcptas.com.au/services/">Services</a>
-<a href="https://gcptas.com.au/services/emergency-plumber-launceston/">24/7 Emergency Help</a>
-<a href="https://gcptas.com.au/services/blockeddrains/">Blocked Drains &amp; CCTV</a>
-<a href="https://gcptas.com.au/services/commercial/">Commercial Plumbing</a>
-<a href="https://gcptas.com.au/services/bathroom-renovations-launceston/">Bathroom Renovations</a>
-<a href="https://gcptas.com.au/services/gas-hot-water-system-launceston/">Gas Fitting &amp; Repairs</a>
-<a href="https://gcptas.com.au/services/plumbers-launceston/">Maintenance Plumbing</a>
-<a href="https://gcptas.com.au/contact-us/">Contact Us</a>
-</nav>
+    <div class="header-inner">
+        <a href="https://gcptas.com.au" class="logo">
+            <img src="https://gcptas.com.au/wp-content/uploads/2022/07/logo-white.png" alt="GCP - Grant Chugg Plumbing" width="204" height="56">
+        </a>
+
+        <nav class="nav-desktop" aria-label="Main navigation">
+            <a href="https://gcptas.com.au/" aria-current="page">Home</a>
+            <a href="https://gcptas.com.au/about-us/">About Us</a>
+            <a href="https://gcptas.com.au/services/">Services</a>
+            <a href="https://gcptas.com.au/contact-us/">Contact Us</a>
+        </nav>
+
+        <div class="header-cta-wrap">
+            <a href="tel:0363268780" class="header-cta">
+                <img src="https://gcptas.com.au/wp-content/uploads/2022/07/24hours-150x150.png" alt="24 hours" width="28" height="28">
+                Emergency — Call 6326 8780
+            </a>
+        </div>
+
+        <button class="nav-toggle" aria-label="Menu Toggle" aria-expanded="false" onclick="document.querySelector('.mobile-nav').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false');">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
 </header>
 
-<!-- HERO -->
+<nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="https://gcptas.com.au/">Home</a>
+    <a href="https://gcptas.com.au/about-us/">About Us</a>
+    <a href="https://gcptas.com.au/about-us/team/">Our Team</a>
+    <a href="https://gcptas.com.au/services/">Services</a>
+    <a href="https://gcptas.com.au/services/emergency-plumber-launceston/">24/7 Emergency</a>
+    <a href="https://gcptas.com.au/services/bathroom-renovations-launceston/">Bathroom Renovations</a>
+    <a href="https://gcptas.com.au/services/gas-hot-water-system-launceston/">Gas Fitting</a>
+    <a href="https://gcptas.com.au/services/commercial/">Commercial Plumbing</a>
+    <a href="https://gcptas.com.au/contact-us/">Contact Us</a>
+    <a href="https://gcptas.com.au/giving-back/">Giving Back</a>
+    <a href="tel:0363268780" class="mobile-nav-cta">Call Now — 6326 8780</a>
+</nav>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
 <section class="hero">
-<div class="hero-inner">
-<div class="hero-content">
-<div class="hero-badge">
-<img src="https://gcptas.com.au/wp-content/uploads/2022/07/24hours-150x150.png" alt="24 hours" width="150" height="150">
-24/7 Emergency Service
-</div>
-<h1>Emergency<br><span>Plumbing</span></h1>
-<p>Our fleet of reliable and licensed plumbers are available 24/7 to take care of your home or business plumbing needs. Whether it's emergency plumbing or routine maintenance, our team is equipped to support you.</p>
-<div class="hero-actions">
-<a href="tel:0363268780" class="btn btn-red">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-Call Now!
-</a>
-<a href="https://gcptas.com.au/services/" class="btn btn-outline">Our Services</a>
-</div>
-</div>
-<div class="hero-logo">
-<img src="https://gcptas.com.au/wp-content/uploads/2022/07/logo-white.png" alt="" width="204" height="56">
-</div>
-</div>
+    <div class="hero-inner">
+        <div class="hero-content">
+            <span class="hero-badge">Launceston's Trusted Plumber</span>
+            <h1>24hrs Emergency Plumbing</h1>
+            <p>Our fleet of reliable and licensed plumbers are available 24/7 to take care of your home or business plumbing needs. Whether it's emergency plumbing or routine maintenance, our team is equipped to support you.</p>
+            <div class="hero-buttons">
+                <a href="tel:0363268780" class="btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Call Now
+                </a>
+                <a href="https://gcptas.com.au/contact-us/" class="btn-secondary">Get a Quote</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://gcptas.com.au/wp-content/uploads/2022/08/Reliable-Plumber-Launceston-GC-transparent-1024x1024.png" alt="Reliable Plumber Launceston - Grant Chugg Plumbing" width="1024" height="1024">
+        </div>
+    </div>
 </section>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-<div class="stats-inner">
-<div class="stat">
-<div class="stat-number">24/7</div>
-<div class="stat-label">Emergency Service</div>
-</div>
-<div class="stat">
-<div class="stat-number">100%</div>
-<div class="stat-label">Licensed &amp; Insured</div>
-</div>
-<div class="stat">
-<div class="stat-number">TAS</div>
-<div class="stat-label">Launceston Based</div>
-</div>
-<div class="stat">
-<div class="stat-number">6326 8780</div>
-<div class="stat-label">Call Anytime</div>
-</div>
-</div>
-</div>
+<!-- ═══ STATS BAR ═══ -->
+<section class="stats-bar" aria-label="Company highlights">
+    <div class="stats-inner">
+        <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Emergency Service</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Licensed &amp; Insured</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">Lic</div>
+            <div class="stat-label">No. 1085018</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">TAS</div>
+            <div class="stat-label">Launceston &amp; Region</div>
+        </div>
+    </div>
+</section>
 
-<!-- SERVICES -->
+<!-- ═══ SERVICES ═══ -->
 <section class="services" id="services">
-<div class="services-inner">
-<div class="section-header">
-<div class="section-tag">What We Do</div>
-<h2 class="section-title">Our Services</h2>
-</div>
-<div class="services-grid">
-<div class="service-card">
-<div class="service-icon">
-<img src="https://gcptas.com.au/wp-content/uploads/2022/07/service-icon1.png" alt="Maintenance Plumbing" width="80" height="80">
-</div>
-<h3>Maintenance Plumbing</h3>
-<p>From leaking toilets and other water leaks, shower repairs, hot water cylinder replacement (electric, solar, or gas) to large commercial projects, we are equipped and knowledgeable to give you the best result.</p>
-</div>
-<div class="service-card">
-<div class="service-icon">
-<img src="https://gcptas.com.au/wp-content/uploads/2022/07/service-icon2.png" alt="Gas Services" width="80" height="80">
-</div>
-<h3>Gas Services</h3>
-<p>Gas Installation, Service and Supply. Our professional and fully accredited gas fitters are knowledgeable and experienced to get you the best result for all your gas needs.</p>
-</div>
-<div class="service-card">
-<div class="service-icon">
-<img src="https://gcptas.com.au/wp-content/uploads/2022/07/icon3.png" alt="Commercial Construction" width="80" height="80">
-</div>
-<h3>Commercial Construction</h3>
-<p>Providing well-managed and timely commercial and industrial plumbing to suit your project and schedule.</p>
-</div>
-<div class="service-card">
-<div class="service-icon">
-<img src="https://gcptas.com.au/wp-content/uploads/2022/07/service-icon3.png" alt="Bathroom Renovations" width="80" height="80">
-</div>
-<h3>Bathroom Renovations</h3>
-<p>Total Bathroom Renovations is your one stop shop for creating a comfortable, bright and practical bathroom or laundry within your home.</p>
-</div>
-</div>
-</div>
+    <div class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Our Services</h2>
+    </div>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Emergency Plumbing</h3>
+            <p>Our fleet of reliable and licensed plumbers are available 24/7 to take care of your home or business plumbing needs. Whether it's emergency plumbing or routine maintenance, our team is equipped to support you.</p>
+        </div>
+        <div class="service-card">
+            <h3>Maintenance Plumbing</h3>
+            <p>From leaking toilets and other water leaks, shower repairs, hot water cylinder replacement (electric, solar, or gas) to large commercial projects, we are equipped and knowledgeable to give you the best result.</p>
+        </div>
+        <div class="service-card">
+            <h3>Gas Services</h3>
+            <p>Gas Installation, Service and Supply. Our professional and fully accredited gas fitters are knowledgeable and experienced to get you the best result for all your gas needs.</p>
+        </div>
+        <div class="service-card">
+            <h3>Commercial Construction</h3>
+            <p>Providing well-managed and timely commercial and industrial plumbing to suit your project and schedule.</p>
+        </div>
+        <div class="service-card">
+            <h3>Bathroom Renovations</h3>
+            <p>Total Bathroom Renovations is your one stop shop for creating a comfortable, bright and practical bathroom or laundry within your home.</p>
+        </div>
+        <div class="service-card">
+            <h3>Blocked Drains &amp; CCTV</h3>
+            <p>It's constantly better to avoid a plumbing emergency as a result of blocked drains. It's much simpler to clear a clogged drain than one that is blocked off completely — and saves you money in the long run.</p>
+        </div>
+    </div>
 </section>
 
-<!-- NO JOB TOO BIG -->
-<section class="cta-banner">
-<h2>No Job Is Too Big Or Too Small</h2>
-<p>Our fleet of reliable and licensed plumbers are available 24/7 to take care of your home or business plumbing needs. Whether it's emergency plumbing or routine maintenance, our team is equipped to support you.</p>
-<a href="tel:0363268780" class="btn btn-red">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-(03) 6326 8780
-</a>
+<!-- ═══ CTA BAND ═══ -->
+<section class="cta-band">
+    <div class="cta-band-inner">
+        <h2>No Job Is Too Big Or Too Small</h2>
+        <p>Give us a call if you need someone to clean and maintain your drains for you — or anything else plumbing related.</p>
+        <a href="tel:0363268780" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call (03) 6326 8780
+        </a>
+    </div>
 </section>
 
-<!-- WHY CHOOSE US -->
-<section class="why-us">
-<div class="why-us-inner">
-<div class="section-header">
-<div class="section-tag">Why Choose GCP</div>
-<h2 class="section-title">Client Testimonials</h2>
-</div>
-<div class="why-grid">
-<div class="why-card">
-<div class="why-card-label">Great</div>
-<div class="why-card-sub">Service</div>
-</div>
-<div class="why-card">
-<div class="why-card-label">High</div>
-<div class="why-card-sub">Quality</div>
-</div>
-<div class="why-card">
-<div class="why-card-label">Professional</div>
-<div class="why-card-sub">Team</div>
-</div>
-<div class="why-card">
-<div class="why-card-label">Best</div>
-<div class="why-card-sub">Results</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- BLOCKED DRAINS -->
+<!-- ═══ BLOCKED DRAINS FEATURE ═══ -->
 <section class="drains">
-<div class="drains-inner">
-<h2>Blocked Drains &amp; Maintenance</h2>
-<ul class="drains-list">
-<li>It's constantly better to avoid a plumbing emergency as a result of blocked drains.</li>
-<li>It's much simpler to clear a clogged drain than one that is blocked off completely (& saves you money in the long run)</li>
-<li>Give us a call if you need someone to clean and maintain your drains for you more</li>
-</ul>
-<a href="tel:0363268780" class="btn btn-red">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-Call (03) 6326 8780
-</a>
-</div>
+    <div class="drains-inner">
+        <div class="drains-image">
+            <img src="https://gcptas.com.au/wp-content/uploads/2022/08/Untitled-1080-%C3%97-1080-px-1024x1024.png" alt="GCP Plumbing Services" width="1024" height="1024">
+        </div>
+        <div class="drains-content">
+            <h2>Prevent Plumbing Emergencies</h2>
+            <p>It's constantly better to avoid a plumbing emergency as a result of blocked drains.</p>
+            <p>It's much simpler to clear a clogged drain than one that is blocked off completely — and saves you money in the long run.</p>
+            <p>Give us a call if you need someone to clean and maintain your drains for you.</p>
+            <a href="tel:0363268780" class="btn-primary">Call Us Today</a>
+        </div>
+    </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials">
+    <div class="section-header">
+        <span class="section-label">What Clients Say</span>
+        <h2 class="section-title">Client Testimonials</h2>
+    </div>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-word">Great</div>
+            <div class="testimonial-label">Service</div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-word">High</div>
+            <div class="testimonial-label">Quality</div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-word">Professional</div>
+            <div class="testimonial-label">Team</div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-word">Best</div>
+            <div class="testimonial-label">Results</div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
 <footer class="site-footer">
-<div class="footer-inner">
-<div class="footer-brand">
-<img src="https://gcptas.com.au/wp-content/uploads/2022/07/logo-white.png" alt="Grant Chugg Plumbing" width="204" height="56">
-<p>Your trusted local plumbing team in Launceston, Tasmania. Licensed, reliable, and available 24/7 for all your plumbing needs.</p>
-</div>
-<div class="footer-col">
-<h4>Services</h4>
-<a href="https://gcptas.com.au/services/emergency-plumber-launceston/">24/7 Emergency Help</a>
-<a href="https://gcptas.com.au/services/plumbers-launceston/">Maintenance Plumbing</a>
-<a href="https://gcptas.com.au/services/gas-hot-water-system-launceston/">Gas Fitting &amp; Repairs</a>
-<a href="https://gcptas.com.au/services/commercial/">Commercial Plumbing</a>
-<a href="https://gcptas.com.au/services/bathroom-renovations-launceston/">Bathroom Renovations</a>
-<a href="https://gcptas.com.au/services/blockeddrains/">Blocked Drains &amp; CCTV</a>
-<a href="https://gcptas.com.au/services/solar-hot-water-launceston/">Solar Hot Water</a>
-<a href="https://gcptas.com.au/services/water-filtration/">Water Filtration</a>
-</div>
-<div class="footer-col footer-contact">
-<h4>Contact</h4>
-<a href="tel:0363268780">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-(03) 6326 8780
-</a>
-<a href="mailto:admin@gcptas.com.au">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-admin@gcptas.com.au
-</a>
-<div class="address">301 Invermay Rd, Invermay TAS 7248</div>
-</div>
-</div>
-<div class="footer-bottom">
-&copy; 2026 Grant Chugg Plumbing Services. All rights reserved.
-</div>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="https://gcptas.com.au/wp-content/uploads/2022/07/footer-logo.png" alt="GCP Grant Chugg Plumbing" width="180">
+            <p>We offer a full range of plumbing services and products with support for residential and commercial operations. Grant Chugg Plumbing Services also offer 24-hour emergency plumbing services.</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <a href="https://gcptas.com.au/">Home</a>
+            <a href="https://gcptas.com.au/about-us/">About</a>
+            <a href="https://gcptas.com.au/services/">Services</a>
+            <a href="https://gcptas.com.au/services/emergency-plumber-launceston/">Emergency Plumbing</a>
+            <a href="https://gcptas.com.au/services/bathroom-renovations-launceston/">Bathroom Renovations</a>
+            <a href="https://gcptas.com.au/services/service-costs/">Our Service Costs</a>
+            <a href="https://gcptas.com.au/privacy-policy/">Privacy Policy</a>
+            <a href="https://gcptas.com.au/terms-conditions-of-trade/">Terms &amp; Conditions</a>
+            <a href="https://gcptas.com.au/giving-back/">Giving Back</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Company</h4>
+            <div class="footer-contact-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <p>Showroom Location 301 Invermay Rd Suite 1 Invermay TAS 7248</p>
+            </div>
+            <div class="footer-contact-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <a href="tel:0363268780">Phone: 03 6326 8780</a>
+            </div>
+            <div class="footer-contact-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:admin@gcptas.com.au">admin@gcptas.com.au</a>
+            </div>
+            <p style="margin-top:8px;">Timings: 8 AM – 5 PM Monday to Friday</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Emergency Plumbing</h4>
+            <p style="font-size:1.6rem;font-family:var(--heading);font-weight:900;color:var(--white);margin-bottom:8px;">24 hour, 7 days a week</p>
+            <p>EMERGENCY PLUMBING available.</p>
+            <p style="margin-top:12px;">ACN: 075 456 601</p>
+            <p>ABN: 18 075 456 601</p>
+            <p>Licence No: 1085018</p>
+            <a href="tel:0363268780" class="btn-primary" style="margin-top:20px;display:inline-flex;font-size:0.9rem;padding:12px 24px;">
+                Call Now
+            </a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; Copyright 2022. All rights reserved. Grant Chugg Plumbing Services.</p>
+    </div>
 </footer>
 
 </body>
