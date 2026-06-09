@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Courses">
+	<section class="py-24 pt-40">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h1 class="text-6xl md:text-8xl mb-8">COURSES.</h1>
+			<p class="text-2xl text-gray-400 mb-16 max-w-2xl font-bold uppercase">Learn the systems I use to scale businesses with AI and Tech.</p>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{[
+					{ title: "AI Workflow Mastery", price: "$199", tag: "Best Seller" },
+					{ title: "Social Media Growth Engine", price: "$149", tag: "Strategy" },
+					{ title: "Zero to Astro: Web Build", price: "$299", tag: "Technical" },
+					{ title: "Business Automation 101", price: "$99", tag: "Starter" }
+				].map((course) => (
+					<div class="border-4 border-primary p-10 flex flex-col justify-between hover:bg-primary hover:text-dark transition-all group">
+						<div>
+							<span class="inline-block bg-primary text-dark px-3 py-1 text-xs font-black uppercase mb-6 group-hover:bg-dark group-hover:text-primary transition-colors">
+								{course.tag}
+							</span>
+							<h2 class="text-4xl md:text-5xl mb-4 leading-none">{course.title}</h2>
+							<p class="text-lg opacity-70 mb-8 font-bold">Short, punchy modules designed for immediate implementation. No filler.</p>
+						</div>
+						<div class="flex items-center justify-between">
+							<span class="text-3xl font-black">{course.price}</span>
+							<button class="bg-dark text-white px-8 py-4 font-black uppercase tracking-widest hover:bg-white hover:text-dark transition-colors group-hover:bg-dark group-hover:text-primary">
+								Enroll Now
+							</button>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+</Layout>

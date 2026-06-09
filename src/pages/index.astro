@@ -1,17 +1,75 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+	<!-- Hero Section -->
+	<section class="relative h-[90vh] flex items-center bg-dark overflow-hidden">
+		<div class="absolute inset-0 z-0 opacity-20">
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#CCFF00,transparent_70%)] opacity-30"></div>
+			<div class="grid grid-cols-12 h-full w-full">
+				{Array.from({ length: 48 }).map((_, i) => (
+					<div class="border-[0.5px] border-primary/20 h-24 w-full"></div>
+				))}
+			</div>
+		</div>
+		
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<h1 class="text-7xl md:text-9xl mb-6">
+				Grow <span class="text-primary italic">Faster</span><br />
+				With AI & Tech.
+			</h1>
+			<p class="max-w-2xl text-xl md:text-2xl text-gray-300 mb-10 font-medium">
+				Straight-talking, results-driven strategies for small business owners, influencers, and creators. Based in Australia. Global impact.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4">
+				<a href="/book" class="bg-primary text-dark text-xl font-black px-10 py-5 hover:bg-white transition-all transform hover:-translate-y-2 text-center">
+					BOOK A CONSULTATION
+				</a>
+				<a href="/services" class="border-2 border-primary text-primary text-xl font-black px-10 py-5 hover:bg-primary hover:text-dark transition-all transform hover:-translate-y-2 text-center">
+					VIEW SERVICES
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Pillars Section -->
+	<section class="py-24 bg-white text-dark">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+				<h2 class="text-5xl md:text-7xl">WHAT I DO.</h2>
+				<p class="max-w-md text-lg font-bold uppercase tracking-tight">
+					Cutting through the noise to deliver tech that actually works for your business.
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+				{[
+					{ title: "Website Building", desc: "Design and development that converts." },
+					{ title: "AI Workflows", desc: "Automate your grind with custom AI pipelines." },
+					{ title: "Social Media", desc: "Strategic management and growth." },
+					{ title: "Agency Management", desc: "Brand deals and growth for influencers." }
+				].map((service) => (
+					<div class="border-4 border-dark p-8 hover:bg-dark hover:text-primary transition-colors group">
+						<h3 class="text-2xl mb-4 group-hover:text-primary">{service.title}</h3>
+						<p class="text-sm font-bold opacity-70 mb-8">{service.desc}</p>
+						<a href="/services" class="inline-block border-b-2 border-dark font-black text-xs tracking-widest group-hover:border-primary">LEARN MORE</a>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Call to Action -->
+	<section class="py-24 bg-primary text-dark overflow-hidden">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<div class="mb-12">
+				<h2 class="text-6xl md:text-8xl mb-8">READY TO<br/>UPGRADE?</h2>
+				<p class="text-xl font-black uppercase tracking-widest">No fluff. Just results.</p>
+			</div>
+			<a href="/book" class="inline-block bg-dark text-primary text-2xl font-black px-12 py-6 hover:bg-white hover:text-dark transition-all">
+				GET STARTED NOW
+			</a>
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "tiinktech - Growth faster with AI & Tech. Website building, AI workflows, Social media management." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | tiinktech</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-dark text-light min-h-screen flex flex-col">
+		<nav class="sticky top-0 z-50 bg-dark/80 backdrop-blur-md border-b-2 border-primary">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex justify-between h-20 items-center">
+					<div class="flex-shrink-0">
+						<a href="/" class="text-3xl font-black tracking-tighter text-primary">TIINKTECH.</a>
+					</div>
+					<div class="hidden md:block">
+						<div class="ml-10 flex items-baseline space-x-8 uppercase font-bold text-sm tracking-widest">
+							<a href="/services" class="hover:text-primary transition-colors">Services</a>
+							<a href="/courses" class="hover:text-primary transition-colors">Courses</a>
+							<a href="/book" class="bg-primary text-dark px-6 py-3 hover:bg-white transition-all transform hover:-translate-y-1">Book Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<main class="flex-grow">
+			<slot />
+		</main>
+
+		<footer class="bg-dark border-t-2 border-primary py-12">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+					<div>
+						<h2 class="text-2xl font-black text-primary mb-4">TIINKTECH.</h2>
+						<p class="text-sm text-gray-400">Straight-talking tech and AI automation for high-growth businesses and creators.</p>
+					</div>
+					<div>
+						<h3 class="font-bold uppercase mb-4 tracking-widest">Global Operations</h3>
+						<p class="text-sm text-gray-400">Based in Australia. Serving clients worldwide.</p>
+					</div>
+					<div>
+						<h3 class="font-bold uppercase mb-4 tracking-widest">Connect</h3>
+						<div class="flex space-x-4">
+							<a href="#" class="text-primary hover:text-white uppercase font-black">Insta</a>
+							<a href="#" class="text-primary hover:text-white uppercase font-black">X</a>
+							<a href="#" class="text-primary hover:text-white uppercase font-black">L-In</a>
+						</div>
+					</div>
+				</div>
+				<div class="mt-12 pt-8 border-t border-gray-800 text-xs text-gray-500 uppercase tracking-widest">
+					&copy; {new Date().getFullYear()} tiinktech. All rights reserved.
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

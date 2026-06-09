@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Book a Consultation">
+	<section class="py-24 pt-40">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+				<div>
+					<h1 class="text-6xl md:text-8xl mb-8">BOOK.</h1>
+					<p class="text-2xl text-gray-400 mb-12 font-bold uppercase">Get personalized help with your tech, AI, or business growth.</p>
+					
+					<div class="space-y-8">
+						<div class="border-l-4 border-primary pl-6">
+							<h3 class="text-xl font-black uppercase text-primary mb-2">One-on-One Session</h3>
+							<p class="text-gray-400">60 minutes of deep dive into your specific challenges. Actionable steps only.</p>
+						</div>
+						<div class="border-l-4 border-primary pl-6">
+							<h3 class="text-xl font-black uppercase text-primary mb-2">Available Globally</h3>
+							<p class="text-gray-400">I'm based in Australia, but I work around the clock to support clients worldwide.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-white p-8 md:p-12 text-dark">
+					<h2 class="text-4xl mb-8">TELL ME WHAT YOU NEED.</h2>
+					<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+						<div>
+							<label class="block text-xs font-black uppercase tracking-widest mb-2">Your Name</label>
+							<input type="text" name="name" required class="w-full border-2 border-dark p-4 focus:bg-primary transition-colors outline-none font-bold" />
+						</div>
+						<div>
+							<label class="block text-xs font-black uppercase tracking-widest mb-2">Email Address</label>
+							<input type="email" name="email" required class="w-full border-2 border-dark p-4 focus:bg-primary transition-colors outline-none font-bold" />
+						</div>
+						<div>
+							<label class="block text-xs font-black uppercase tracking-widest mb-2">What's the challenge?</label>
+							<select name="service" class="w-full border-2 border-dark p-4 focus:bg-primary transition-colors outline-none font-bold appearance-none">
+								<option>Website Building</option>
+								<option>AI Workflows</option>
+								<option>Social Media Management</option>
+								<option>Agency Management</option>
+								<option>Other / Not Sure</option>
+							</select>
+						</div>
+						<div>
+							<label class="block text-xs font-black uppercase tracking-widest mb-2">Message</label>
+							<textarea name="message" rows="4" required class="w-full border-2 border-dark p-4 focus:bg-primary transition-colors outline-none font-bold"></textarea>
+						</div>
+						<button type="submit" class="w-full bg-dark text-primary font-black uppercase py-5 text-xl tracking-widest hover:bg-primary hover:text-dark transition-all border-2 border-dark">
+							SUBMIT REQUEST
+						</button>
+						<p class="text-[10px] text-gray-500 uppercase tracking-widest text-center">Form powered by Formspree. Replace YOUR_FORM_ID once you have it.</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
